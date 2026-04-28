@@ -1,0 +1,223 @@
+:root {
+    --dark-green: #062c21;
+    --ivory: #fdfcf0;
+    --yellow: #f4c430;
+    --red: #ff5e5e;
+    --teal: #0d6b63;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--ivory);
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: var(--dark-green);
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.nav-links a.active {
+    color: var(--yellow);
+    border-bottom: 2px solid var(--yellow);
+}
+
+/* Hero Section & Decorative Elements */
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Decorative Blobs (Wavy features) */
+.blob {
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.blob-yellow {
+    width: 300px;
+    height: 400px;
+    background: var(--yellow);
+    top: -50px;
+    left: -100px;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+}
+
+.blob-red {
+    width: 150px;
+    height: 150px;
+    background: var(--red);
+    bottom: 100px;
+    left: 20px;
+    border-radius: 50% 50% 20% 80%;
+}
+
+.blob-teal {
+    width: 400px;
+    height: 600px;
+    background: var(--teal);
+    right: -100px;
+    top: 50px;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+/* Hero Layout */
+.hero-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10%;
+    z-index: 5;
+}
+
+.promo-banner {
+    background: var(--red);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.main-title {
+    font-size: 55px;
+    color: var(--dark-green);
+    margin: 10px 0;
+}
+
+.service-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-list li {
+    margin: 8px 0;
+    color: var(--dark-green);
+    font-weight: 500;
+}
+
+.price-btn {
+    background: var(--dark-green);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Logo Frame */
+.logo-frame {
+    width: 300px;
+    height: 250px;
+    background: var(--dark-green);
+    border: 6px solid var(--yellow);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.logo-frame img {
+    max-width: 90%;
+    height: auto;
+}
+
+/* Yellow Footer Bar Fix */
+.yellow-footer-bar {
+    background-color: var(--yellow);
+    height: 60px;
+    width: 80%; /* Adjusted width */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    justify-content: space-between;
+    border-top-right-radius: 0; /* Matches your reference more naturally */
+    z-index: 6;
+}
+
+.socials i {
+    margin-right: 15px;
+    font-size: 18px;
+    color: var(--dark-green);
+}
+
+.contact-info {
+    font-weight: bold;
+    color: var(--dark-green);
+}
+/* Mobile Devices (Phones) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px;
+        flex-direction: column; /* Logo mela, links keela varum */
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 11px;
+        flex-wrap: wrap; /* Links overflow aagama madaigum */
+        justify-content: center;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse; /* Image mela, text keela varum */
+        text-align: center;
+        padding: 20px;
+    }
+
+    .main-title {
+        font-size: 32px; /* Title size kuraisachu */
+    }
+
+    .logo-frame {
+        width: 200px; /* Logo frame phone-ku yethamari chinathakiruku */
+        height: 180px;
+        margin-bottom: 20px;
+    }
+
+    .yellow-footer-bar {
+        width: 100%; /* Phone-la full width iruntha thaan nalla irukkum */
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        position: relative; /* Bottom-la fix aagi nikkum */
+    }
+
+    .blob-teal {
+        display: none; /* Mobile-la nariya design distraction-ah irukum so teal blob remove panlam */
+    }
+}
