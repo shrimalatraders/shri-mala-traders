@@ -46,7 +46,7 @@ body, html {
     border-bottom: 2px solid var(--yellow);
 }
 
-/* Hero Section */
+/* Hero Section & Decorative Elements */
 .hero-container {
     position: relative;
     width: 100%;
@@ -56,7 +56,7 @@ body, html {
     justify-content: center;
 }
 
-/* Decorative Blobs */
+/* Decorative Blobs (Wavy features) */
 .blob {
     position: absolute;
     z-index: 1;
@@ -113,29 +113,15 @@ body, html {
     margin: 10px 0;
 }
 
-/* --- SERVICE LIST FIXED --- */
-.service-list {
-    margin: 20px 0;
-    display: flex;
-    justify-content: flex-start; /* Default left in desktop */
-}
-
 .service-list ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: inline-block; /* Container-ah text size-ku fix pannum */
 }
 
 .service-list li {
-    margin: 10px 0;
+    margin: 8px 0;
     color: var(--dark-green);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-align: left;
-    white-space: nowrap; /* Romba mukkiyam: Text-ah madaikaathu */
+    font-weight: 500;
 }
 
 .price-btn {
@@ -146,7 +132,6 @@ body, html {
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 15px;
 }
 
 /* Logo Frame */
@@ -167,11 +152,11 @@ body, html {
     height: auto;
 }
 
-/* Footer Bar */
+/* Yellow Footer Bar Fix */
 .yellow-footer-bar {
     background-color: var(--yellow);
     height: 60px;
-    width: 80%;
+    width: 80%; /* Adjusted width */
     position: absolute;
     bottom: 0;
     left: 0;
@@ -179,6 +164,7 @@ body, html {
     align-items: center;
     padding: 0 40px;
     justify-content: space-between;
+    border-top-right-radius: 0; /* Matches your reference more naturally */
     z-index: 6;
 }
 
@@ -192,46 +178,46 @@ body, html {
     font-weight: bold;
     color: var(--dark-green);
 }
-
-/* --- MOBILE FIX (SPECIFIC) --- */
+/* Mobile Devices (Phones) */
 @media (max-width: 768px) {
-    .navbar { padding: 10px 20px; flex-direction: column; gap: 10px; }
-    .nav-links { gap: 10px; font-size: 11px; justify-content: center; }
+    .navbar {
+        padding: 10px 20px;
+        flex-direction: column; /* Logo mela, links keela varum */
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 11px;
+        flex-wrap: wrap; /* Links overflow aagama madaigum */
+        justify-content: center;
+    }
 
     .hero-content {
-        flex-direction: column-reverse;
+        flex-direction: column-reverse; /* Image mela, text keela varum */
         text-align: center;
         padding: 20px;
     }
 
-    .main-title { font-size: 32px; }
-
-    /* Idhu thaan Melamine line-oda ellathaiyum align pannum */
-    .service-list {
-        display: flex;
-        justify-content: center; /* Motha box-um center varum */
-        width: 100%;
-        margin: 20px 0;
+    .main-title {
+        font-size: 32px; /* Title size kuraisachu */
     }
 
-    .service-list ul {
-        text-align: left; /* Icons ellam straight line-la irukkum */
+    .logo-frame {
+        width: 200px; /* Logo frame phone-ku yethamari chinathakiruku */
+        height: 180px;
+        margin-bottom: 20px;
     }
-
-    .service-list li {
-        font-size: 15px;
-        justify-content: flex-start; /* List kulla left align varum */
-    }
-
-    .logo-frame { width: 220px; height: 180px; margin-bottom: 20px; }
 
     .yellow-footer-bar {
-        width: 100%;
+        width: 100%; /* Phone-la full width iruntha thaan nalla irukkum */
         flex-direction: column;
         height: auto;
-        padding: 15px;
-        position: relative;
+        padding: 10px;
+        position: relative; /* Bottom-la fix aagi nikkum */
     }
 
-    .blob-teal, .blob-yellow { display: none; }
+    .blob-teal {
+        display: none; /* Mobile-la nariya design distraction-ah irukum so teal blob remove panlam */
+    }
 }
