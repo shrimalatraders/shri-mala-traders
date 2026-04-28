@@ -113,15 +113,24 @@ body, html {
     margin: 10px 0;
 }
 
+/* --- FIXED LIST ALIGNMENT --- */
 .service-list ul {
     list-style: none;
     padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .service-list li {
     margin: 8px 0;
     color: var(--dark-green);
-    font-weight: 500;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Tick-kum text-kum gap */
+    text-align: left;
 }
 
 .price-btn {
@@ -152,11 +161,11 @@ body, html {
     height: auto;
 }
 
-/* Yellow Footer Bar Fix */
+/* Yellow Footer Bar */
 .yellow-footer-bar {
     background-color: var(--yellow);
     height: 60px;
-    width: 80%; /* Adjusted width */
+    width: 80%;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -164,7 +173,6 @@ body, html {
     align-items: center;
     padding: 0 40px;
     justify-content: space-between;
-    border-top-right-radius: 0; /* Matches your reference more naturally */
     z-index: 6;
 }
 
@@ -178,46 +186,62 @@ body, html {
     font-weight: bold;
     color: var(--dark-green);
 }
-/* Mobile Devices (Phones) */
+
+/* --- MOBILE RESPONSIVE FIXES --- */
 @media (max-width: 768px) {
     .navbar {
         padding: 10px 20px;
-        flex-direction: column; /* Logo mela, links keela varum */
+        flex-direction: column;
         gap: 10px;
     }
 
     .nav-links {
         gap: 10px;
         font-size: 11px;
-        flex-wrap: wrap; /* Links overflow aagama madaigum */
+        flex-wrap: wrap;
         justify-content: center;
     }
 
     .hero-content {
-        flex-direction: column-reverse; /* Image mela, text keela varum */
+        flex-direction: column-reverse;
         text-align: center;
         padding: 20px;
     }
 
     .main-title {
-        font-size: 32px; /* Title size kuraisachu */
+        font-size: 32px;
+    }
+
+    /* Mobile-la list items-ah center pannurom aana ticks straight-ah irukkum */
+    .service-list {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .service-list ul {
+        align-items: flex-start; /* Ticks-ah left side-la line up pannum */
+    }
+
+    .service-list li {
+        font-size: 14px;
     }
 
     .logo-frame {
-        width: 200px; /* Logo frame phone-ku yethamari chinathakiruku */
+        width: 200px;
         height: 180px;
         margin-bottom: 20px;
     }
 
     .yellow-footer-bar {
-        width: 100%; /* Phone-la full width iruntha thaan nalla irukkum */
+        width: 100%;
         flex-direction: column;
         height: auto;
-        padding: 10px;
-        position: relative; /* Bottom-la fix aagi nikkum */
+        padding: 15px;
+        position: relative;
     }
 
-    .blob-teal {
-        display: none; /* Mobile-la nariya design distraction-ah irukum so teal blob remove panlam */
+    .blob-teal, .blob-yellow {
+        display: none; /* Mobile view clean-ah irukka blobs kuraikirum */
     }
 }
